@@ -4,8 +4,8 @@ import { useNavigate,Outlet } from 'react-router-dom';
 const Navbar = () => {
 
     const [page,setPage]=useState('Home');
-    const pageIdentifiers=['Home','Video upload'];
-    const pageNavigators = ['/','/upload-video']
+    const pageIdentifiers=['Home','Catalogs'];
+    const pageNavigators = ['/','/catalogs']
     const navigateRouter = useNavigate();
 
     const handleNavigation=(name,path)=>{
@@ -16,7 +16,7 @@ const Navbar = () => {
     return ( 
         <Fragment>
         <nav className='navbar-div'>
-            <div className='company'>
+            <div className='company' onClick={()=>navigateRouter('/')}>
                 Streamer
             </div>
             <div className='pages'>
@@ -27,7 +27,7 @@ const Navbar = () => {
                     </p>
                 })}
             </div>
-            <div className='ext'>Cortex</div>
+            <div className='ext' onClick={()=>navigateRouter('admin')}>Admin</div>
         </nav>
         <Outlet/>
     </Fragment>

@@ -3,6 +3,8 @@ import { Routes,Route } from "react-router-dom"
 import UploadVideo from './routes/upload-video/upload-video.component';
 import Home from "./routes/home/home.component"
 import Navbar from "./components/navbar/navbar.component";
+import Catalogs from "./routes/catalogs/catalogs.component";
+import Admin from './routes/admin/admin.component';
 import '@fontsource/poppins';
 import '@fontsource/bebas-neue';
 
@@ -13,7 +15,9 @@ function App() {
     <Routes>
       <Route path="/" element={<Navbar/>}>
         <Route index element={<Home/>} />
+        <Route path="catalogs" element={<Catalogs/>} />
         <Route path="upload-video" element={<UploadVideo/>} />
+        <Route path="admin" element={<Admin/>} />
       </Route>
     </Routes>
     </Fragment>
