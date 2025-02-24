@@ -1,0 +1,33 @@
+.watch-div{
+    gap: 0px;
+    h1{
+        text-align: center;
+    }
+    .main{
+        .img-loader-div{
+            width: 100%;
+            // padding-top: 56.25%;
+            padding-top: 41.25%;
+            // height: 60%;
+            margin-top: -30px;
+            position: relative;
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+              }
+              .loader-div{
+                z-index: 40;
+                top: 50%;
+              }
+        }
+    }
+    .time{
+        width: 98%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.2rem;
+    }
+}

@@ -1,14 +1,12 @@
 import './catalogs.styles.scss';
 import { options,CatalogsImagesObject } from '../../utils/helpers';
 import ImgLoader from '../../components/img-loader/img-loader.component';
-import { useNavigate } from 'react-router-dom';
 import SearchBar from '../../components/searchbar/searchbar.component';
 import AsyncLoader from '../../components/async-loader/async-loader.component';
 import { useState } from 'react';
 
 
 const Catalogs = () => {
-    const router = useNavigate();
     const [filterData,setFilterData]=useState(options);
     const handleFilterData=(value)=>{
         setFilterData(options.filter(name=>name.toLowerCase().startsWith(value.toLowerCase())))
@@ -20,8 +18,8 @@ const Catalogs = () => {
             <SearchBar handleFilterData={handleFilterData} />
             <div className='main'>
                 {filterData.map((name,index)=>{
-                    return <div key={`catalogs-image-${index}`} className='tile' onClick={()=>router(`/catalog/${name}`)}>
-                        <ImgLoader imgSrc={CatalogsImagesObject[name]} />
+                    return <div key={`catalogs-image-${index}`} className='tile'>
+                        <ImgLoader imgSrc={CatalogsImagesObject[name]} route={`/catalog/${name}`} />
                         <h3>{name[0].toUpperCase()+name.slice(1,name.length)}</h3>
                     </div>
                 })}
